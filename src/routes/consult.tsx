@@ -33,6 +33,18 @@ function useCamera(on: boolean) {
   return ref;
 }
 
+function useStopwatch(active: boolean) {
+  const [seconds, setSeconds] = useState(0);
+  useEffect(() => {
+    if (!active) return;
+    const t = setInterval(() => setSeconds((s) => s + 1), 1000);
+    return () => clearInterval(t);
+  }, [active]);
+  const mins = String(Math.floor(seconds / 60)).padStart(2, "0");
+  const secs = String(seconds % 60).padStart(2, "0");
+  return `${mins}:${secs}`;
+}
+
 function Consult() {
   const { role } = useApp();
   const nav = useNavigate();
@@ -46,6 +58,7 @@ function Consult() {
   const [rx, setRx] = useState<string[]>([]);
   const [rxIn, setRxIn] = useState("");
   const vid = useCamera(cam);
+  const callDuration = useStopwatch(phase === "call");
 
   useEffect(() => {
     if (phase === "waiting" && role === "patient") {
@@ -92,7 +105,7 @@ function Consult() {
         <div className="text-center">
           <div className="mx-auto grid h-28 w-28 place-items-center rounded-full bg-primary-foreground/10 font-serif text-4xl">{role === "doctor" ? "AM" : "CD"}</div>
           <p className="mt-3 font-serif text-2xl">{role === "doctor" ? "Aarav Mehta" : "Dr. Chetali Damania"}</p>
-          <p className="text-xs opacity-70">HD · 00:{String(new Date().getSeconds()).padStart(2, "0")} · encrypted</p>
+          <p className="text-xs opacity-70">HD · {callDuration} · encrypted</p>
         </div>
       </div>
       <div className="absolute right-4 top-4 h-40 w-28 overflow-hidden rounded-2xl border-2 border-primary-foreground/30">{Self}</div>
