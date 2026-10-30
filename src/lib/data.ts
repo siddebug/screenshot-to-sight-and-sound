@@ -59,3 +59,6 @@ export const QUEUE_SEED = [
   { id: "q4", time: "16:15", patient: "Rohan D'Souza", country: "🇮🇳 Goa clinic", reason: "Child's recurrent cough", kind: "Comprehensive", status: "Upcoming" },
   { id: "q5", time: "19:00", patient: "Meera Iyer", country: "🇺🇸 US", reason: "Anxiety & sleep", kind: "Follow-up", status: "Upcoming" },
 ] as const;
+
+export type PrescriptionData = typeof PRESCRIPTION;
+
