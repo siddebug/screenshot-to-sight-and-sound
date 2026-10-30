@@ -8,3 +8,9 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Developer Preferences & Memory
+
+1. **Memory & Context:** Keep track of progress, notes, and architectural decisions persistently.
+2. **GitHub Commits (Confirmation Required):** Always ask for explicit user confirmation before committing or pushing changes to the GitHub repository.
+
