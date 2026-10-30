@@ -23,7 +23,7 @@ const SLOTS = { Morning: ["09:30", "10:15", "11:00", "11:45"], Afternoon: ["13:0
 const STEPS = ["Type", "Duration", "Slot", "Intake", "Pay"];
 
 function Book() {
-  const { addAppointment } = useApp();
+  const { addAppointment, consultationFees, addReport } = useApp();
   const [step, setStep] = useState(0);
   const [mode, setMode] = useState<"online" | "clinic">("online");
   const [kind, setKind] = useState<"Comprehensive" | "Follow-up">("Comprehensive");
@@ -36,7 +36,7 @@ function Book() {
   const [done, setDone] = useState(false);
   const [drag, setDrag] = useState(false);
 
-  const fee = FEES[kind];
+  const fee = kind === "Comprehensive" ? consultationFees.comprehensive : consultationFees.followUp;
   const platform = mode === "online" ? 50 : 0;
   const gst = Math.round((fee + platform) * 0.18);
   const total = fee + platform + gst;
@@ -51,31 +51,48 @@ function Book() {
   const canNext = [true, true, !!date && !!time, intake.complaint.trim().length > 2, true][step];
 
   const receipt = async () => {
-    const { jsPDF } = await import("jspdf");
-    const doc = new jsPDF();
-    doc.setFont("times", "bold"); doc.setFontSize(20); doc.text("Health & Homeopathy", 20, 24);
-    doc.setFont("helvetica", "normal"); doc.setFontSize(10);
-    doc.text("Dr. Chetali Damania, BHMS (Univ. of Goa) · Gold Medalist in Dietetics", 20, 31);
-    doc.setFontSize(14); doc.text("Booking Receipt", 20, 46);
-    doc.setFontSize(11);
-    const rows = [
-      ["Booking ID", `HH-${Date.now().toString().slice(-6)}`],
-      ["Type", mode === "online" ? "Online Video Consultation" : "In-Person · Goa Clinic"],
-      ["Consultation", `${kind} (${kind === "Comprehensive" ? 45 : 20} min)`],
-      ["Date & time", `${date?.toDateString()} ${time}`],
-      ["Complaint", intake.complaint],
-      ["Consultation fee", `INR ${fee}`], ["Platform fee", `INR ${platform}`], ["GST 18%", `INR ${gst}`],
-      ["Total paid", `INR ${total}`], ["Payment method", pay],
-    ];
-    rows.forEach(([k, v], i) => { doc.text(String(k), 20, 58 + i * 8); doc.text(String(v).slice(0, 60), 80, 58 + i * 8); });
-    doc.save("booking-receipt.pdf");
+    try {
+      const { jsPDF } = await import("jspdf");
+      const doc = new jsPDF();
+      doc.setFont("times", "bold"); doc.setFontSize(20); doc.text("Health & Homeopathy", 20, 24);
+      doc.setFont("helvetica", "normal"); doc.setFontSize(10);
+      doc.text("Dr. Chetali Damania, BHMS (Univ. of Goa) · Gold Medalist in Dietetics", 20, 31);
+      doc.setFontSize(14); doc.text("Booking Receipt", 20, 46);
+      doc.setFontSize(11);
+      const rows = [
+        ["Booking ID", `HH-${Date.now().toString().slice(-6)}`],
+        ["Type", mode === "online" ? "Online Video Consultation" : "In-Person · Goa Clinic"],
+        ["Consultation", `${kind} (${kind === "Comprehensive" ? 45 : 20} min)`],
+        ["Date & time", `${date?.toDateString()} ${time}`],
+        ["Complaint", intake.complaint],
+        ["Consultation fee", `INR ${fee}`], ["Platform fee", `INR ${platform}`], ["GST 18%", `INR ${gst}`],
+        ["Total paid", `INR ${total}`], ["Payment method", pay],
+      ];
+      rows.forEach(([k, v], i) => { doc.text(String(k), 20, 58 + i * 8); doc.text(String(v).slice(0, 60), 80, 58 + i * 8); });
+      doc.save("booking-receipt.pdf");
+      toast.success("Receipt downloaded");
+    } catch {
+      window.print();
+    }
   };
 
   const confirm = () => {
     if (!date || !time) return;
-    addAppointment({ id: `A-${Date.now()}`, mode, kind, date: date.toISOString().slice(0, 10), time });
+    addAppointment({
+      id: `A-${Date.now()}`,
+      mode,
+      kind,
+      date: date.toISOString().slice(0, 10),
+      time,
+      patientName: "Aarav Mehta",
+      complaint: intake.complaint,
+    });
+    // Add uploaded files to reports vault
+    files.forEach((f) => {
+      addReport({ id: String(Date.now() + Math.random()), name: f, date: "Today", size: "150 KB" });
+    });
     setDone(true);
-    toast.success("Payment successful · Appointment confirmed");
+    toast.success("Payment successful · Appointment confirmed with Dr. Chetali");
   };
 
   if (done)
