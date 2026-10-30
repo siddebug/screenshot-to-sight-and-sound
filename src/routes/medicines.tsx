@@ -19,10 +19,10 @@ export const Route = createFileRoute("/medicines")({
 });
 
 function Medicines() {
-  const { orders } = useApp();
+  const { orders, activePrescription } = useApp();
   const copy = async (awb: string) => {
     try { await navigator.clipboard.writeText(awb); } catch { /* ignore */ }
-    toast.success(`AWB ${awb} copied`);
+    toast.success(`AWB ${awb} copied to clipboard`);
   };
   return (
     <div>
@@ -59,9 +59,20 @@ function Medicines() {
               </div>
               <div className="mt-3 flex items-center justify-between rounded-xl border border-dashed border-border p-3">
                 <div><p className="text-[10px] uppercase tracking-wider text-muted-foreground">AWB / Tracking no.</p><p className="font-mono text-lg font-semibold text-forest">{o.awb}</p></div>
-                <button onClick={() => copy(o.awb)} className="flex items-center gap-1 rounded-full border border-border bg-card px-3 py-2 text-xs"><Copy className="h-3.5 w-3.5" /> Copy AWB</button>
+                <button onClick={() => copy(o.awb)} className="flex items-center gap-1 rounded-full border border-border bg-card px-3 py-2 text-xs hover:bg-muted transition"><Copy className="h-3.5 w-3.5" /> Copy AWB</button>
               </div>
-              <a href={c.url(o.awb)} target="_blank" rel="noreferrer" className="mt-3 flex items-center justify-center gap-2 rounded-full bg-primary py-3 text-sm font-semibold text-primary-foreground">
+              <a 
+                href={c.url(o.awb)} 
+                target="_blank" 
+                rel="noreferrer" 
+                onClick={() => {
+                  if (o.courier === "indiapost") {
+                    copy(o.awb);
+                    toast.info("AWB copied! Paste into India Post's tracking field on their website.");
+                  }
+                }}
+                className="mt-3 flex items-center justify-center gap-2 rounded-full bg-primary py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition"
+              >
                 Track Package on {c.name} <ExternalLink className="h-4 w-4" />
               </a>
             </Card>
@@ -77,11 +88,11 @@ function Medicines() {
       <SectionTitle title="Prescription" />
       <Card>
         <div className="flex items-start justify-between">
-          <div><p className="font-serif text-xl text-forest">{PRESCRIPTION.diagnosis}</p><p className="text-xs text-muted-foreground">{PRESCRIPTION.id} · {PRESCRIPTION.date}</p></div>
+          <div><p className="font-serif text-xl text-forest">{activePrescription.diagnosis}</p><p className="text-xs text-muted-foreground">{activePrescription.id} · {activePrescription.date}</p></div>
           <span className="flex items-center gap-1 rounded-full bg-secondary px-2 py-1 text-[10px] font-semibold text-primary"><ShieldCheck className="h-3 w-3" /> Digitally signed</span>
         </div>
         <div className="mt-4 space-y-3">
-          {PRESCRIPTION.remedies.map((r) => (
+          {activePrescription.remedies.map((r) => (
             <div key={r.name} className="rounded-xl border border-border p-3">
               <p className="font-semibold text-forest">{r.name}</p>
               <p className="text-xs text-muted-foreground">{r.dose} · {r.duration}</p>
@@ -89,7 +100,7 @@ function Medicines() {
           ))}
         </div>
         <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Dietary precautions</p>
-        <ul className="mt-1 list-disc pl-5 text-xs text-forest">{PRESCRIPTION.precautions.map((p) => <li key={p}>{p}</li>)}</ul>
+        <ul className="mt-1 list-disc pl-5 text-xs text-forest">{activePrescription.precautions.map((p) => <li key={p}>{p}</li>)}</ul>
         <div className="mt-4 border-t border-border pt-3 text-right">
           <p className="font-serif text-lg italic text-forest">Dr. Chetali Damania</p>
           <p className="text-[10px] text-muted-foreground">BHMS, University of Goa · Reg. No. GHC-2451</p>
