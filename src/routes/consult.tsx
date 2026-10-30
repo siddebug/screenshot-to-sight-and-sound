@@ -52,6 +52,7 @@ function Consult() {
       const t = setTimeout(() => { setPhase("call"); toast("Dr. Chetali admitted you"); }, 5000);
       return () => clearTimeout(t);
     }
+    return undefined;
   }, [phase, role]);
 
   const end = () => { toast("Call ended"); nav({ to: "/" }); };

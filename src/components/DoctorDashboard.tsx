@@ -22,7 +22,7 @@ export function DoctorDashboard() {
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.remedy || !form.awb) return toast.error("Add a remedy and AWB number");
+    if (!form.remedy || !form.awb) { toast.error("Add a remedy and AWB number"); return; }
     addOrder({ id: `ORD-${Math.floor(Math.random() * 9000 + 1000)}`, remedies: [form.remedy], courier: form.courier, awb: form.awb.trim(), stage: 1, eta: "Arriving in 3–5 days" });
     toast.success(`Patient notified · ${COURIERS[form.courier].name} ${form.awb}`);
     setForm({ remedy: "", dosage: "", courier: "bluedart", awb: "" });

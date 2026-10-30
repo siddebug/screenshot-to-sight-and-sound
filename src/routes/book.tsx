@@ -67,7 +67,7 @@ function Book() {
       ["Consultation fee", `INR ${fee}`], ["Platform fee", `INR ${platform}`], ["GST 18%", `INR ${gst}`],
       ["Total paid", `INR ${total}`], ["Payment method", pay],
     ];
-    rows.forEach(([k, v], i) => { doc.text(k, 20, 58 + i * 8); doc.text(String(v).slice(0, 60), 80, 58 + i * 8); });
+    rows.forEach(([k, v], i) => { doc.text(String(k), 20, 58 + i * 8); doc.text(String(v).slice(0, 60), 80, 58 + i * 8); });
     doc.save("booking-receipt.pdf");
   };
 

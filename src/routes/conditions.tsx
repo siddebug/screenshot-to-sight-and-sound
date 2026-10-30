@@ -16,7 +16,7 @@ export const Route = createFileRoute("/conditions")({
 });
 
 function Conditions() {
-  const [open, setOpen] = useState<string | null>(CONDITIONS[0].id);
+  const [open, setOpen] = useState<string | null>(CONDITIONS[0]?.id ?? null);
   return (
     <div>
       <h1 className="text-3xl text-forest">Conditions</h1>

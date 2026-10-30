@@ -34,7 +34,7 @@ function useCountdown(target: Date) {
 function Index() {
   const { role, appointments } = useApp();
   if (role === "doctor") return <DoctorDashboard />;
-  const next = appointments[0];
+  const next = appointments[0] ?? { date: new Date().toISOString().slice(0, 10), time: "18:30", kind: "Follow-up" };
   const target = new Date(`${next.date}T${next.time}:00`);
   return <PatientHome target={target} kind={next.kind} />;
 }
