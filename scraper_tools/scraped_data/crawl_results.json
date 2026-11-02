@@ -1,0 +1,825 @@
+{
+  "base_url": "https://chetali-care-and-consult.lovable.app",
+  "pages": [
+    {
+      "url": "https://chetali-care-and-consult.lovable.app",
+      "title": "Dr. Chetali Damania — Health & Homeopathy",
+      "screenshot": "C:\\Users\\SIDDHARTH GAJJAR\\.gemini\\antigravity\\scratch\\web_scraping_starter\\scraped_data\\home.png",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Gentle homeopathy,\nhonest answers."
+        },
+        {
+          "tag": "h2",
+          "text": "Eighteen years of listening, looking deeper, treating gently."
+        },
+        {
+          "tag": "h2",
+          "text": "Conditions I treat most"
+        },
+        {
+          "tag": "h2",
+          "text": "Small reminders, between visits."
+        },
+        {
+          "tag": "h2",
+          "text": "Ready when you are."
+        }
+      ],
+      "buttons": [],
+      "forms": [],
+      "text_summary": "h\nHealth & Homeopathy\nHome\nAbout\nConditions\nApproach\nContact\nBook Consultation\n18 YEARS OF PRACTICE\nGentle homeopathy,\nhonest answers.\n\nI’m Dr. Chetali Damania. For nearly two decades I’ve helped families find calm, clarity and quiet healing — while being honest about what homeopathy can, and cannot, do.\n\nBook a consultation\nHow homeopathy differs\nyears experience\n18+\nYEARS EXPERIENCE\ncountries served\n6\nCOUNTRIES SERVED\nUniv. of Goa\nBHMS\nUNIV. OF GOA\nCONSULTING FROM\nGoa · Mumbai · Dubai · Punjab · worldwide\nClinical clarity\n\nA clear diagnosis, in plain language — with options across homeopathy and allopathy.\n\nHonest opinion\n\nIf homeopathy isn’t the right path, I’ll tell you. Your wellbeing comes first.\n\nGentle remedies\n\nIndividualised, side-effect-free care chosen for your full picture.\n\nCare, anywhere\n\nOnline consultations worldwide; in-person visits at the Goa clinic by appointment.\n\n18\nYEARS OF LISTENING\nABOUT DR. CHETALI\nEighteen years of listening, looking deeper, treating gently.\n\nA BHMS graduate from the University of Goa and a gold medalist in Dietetics from Maharashtra, Dr. Chetali brings rigorous clinical training to every consultation. Her practice spans acute illnesses and chronic concerns — with deep expertise in paediatrics, skin, hormonal balance, anxiety and depression.\n\nPatients return year after year because they feel heard. You will leave each visit knowing what is happening, what to expect, and exactly when modern medicine should be the first call.\n\nRead her full story\nAREAS OF FOCUS\nConditions I treat most\nSee all\nPaediatric care\n01\n\nRecurring colds, colic, allergies, behavioural concerns and gentle support as little ones grow.\n\nSkin conditions\n02\n\nEczema, psoriasis, acne, urticaria — treated from within, not just the surface.\n\nHormonal disorders\n03\n\nPCOS, thyroid imbalance, menstrual irregularities and perimenopausal support.\n\nAnxiety & depression\n04\n\nA calm space, careful listening, and remedies that work alongside therapy.\n\nAcute illnesses\n05\n\nFevers, infections, injuries — with honest guidance on when allopathy is needed.\n\nLifestyle & diet\n06\n\nDietetics-informed plans built around your constitution and daily reality.\n\n“She told me what allopathy could do quickly, and what homeopathy could heal slowly. For the first time, I felt like someone was treating me — not my reports.”\n\nPatient since 2014 · Mumbai\nDAILY COMPANION\nSmall reminders, between visits.\n\nShort reels, simple tips and answers to the questions patients ask most — shared on Instagram, Facebook and the WhatsApp channel.\n\nInstagram reels\nFacebook\nWhatsApp channel\nMorning remedy tips\n1:24\nWhen to see a doctor\n0:48\nKids & immunity\n1:02\nSkin, from within\n0:57\nDiet & doshas\n1:15\nA calm mind\n0:39\nBEGIN\nReady when you are.\n\nBook an online consultation from anywhere, or choose an in-person visit at the Goa clinic.\n\nChoose a time\nHealth & Homeopathy\n\nGentle, honest homeopathic care from Dr. Chetali Damania — serving patients across India and abroad for 18 years.\n\nExplore\nAbout Dr. Chetali\nConditions treated\nOur approach\nBook consultation\nContact\nStay connected\n\nOnline consultations worldwide. In-person visits by appointment.\n\n© 2026 Health & Homeopathy. All rights reserved.\nBHMS, University of Goa · Gold Medalist, Dietetics (Maharashtra)\nEdit with",
+      "raw_links": [
+        {
+          "text": "h\nHealth & Homeopathy",
+          "href": "/"
+        },
+        {
+          "text": "Home",
+          "href": "/"
+        },
+        {
+          "text": "About",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions",
+          "href": "/services"
+        },
+        {
+          "text": "Approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "Book Consultation",
+          "href": "/book"
+        },
+        {
+          "text": "Book a consultation",
+          "href": "/book"
+        },
+        {
+          "text": "How homeopathy differs",
+          "href": "/approach"
+        },
+        {
+          "text": "Read her full story",
+          "href": "/about"
+        },
+        {
+          "text": "See all",
+          "href": "/services"
+        },
+        {
+          "text": "Instagram reels",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "Facebook",
+          "href": "https://facebook.com"
+        },
+        {
+          "text": "WhatsApp channel",
+          "href": "https://wa.me/"
+        },
+        {
+          "text": "Morning remedy tips\n1:24",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "When to see a doctor\n0:48",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "Kids & immunity\n1:02",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "Skin, from within\n0:57",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "Diet & doshas\n1:15",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "A calm mind\n0:39",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "Choose a time",
+          "href": "/book"
+        },
+        {
+          "text": "About Dr. Chetali",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions treated",
+          "href": "/services"
+        },
+        {
+          "text": "Our approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Book consultation",
+          "href": "/book"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "",
+          "href": "https://facebook.com"
+        },
+        {
+          "text": "",
+          "href": "https://wa.me/"
+        },
+        {
+          "text": "",
+          "href": "mailto:hello@healthandhomeopathy.com"
+        },
+        {
+          "text": "Edit with",
+          "href": "https://lovable.dev/projects/lovp_2j6hfkcepg8raajyqc27vwrgmp?utm_source=lovable-badge"
+        }
+      ]
+    },
+    {
+      "url": "https://chetali-care-and-consult.lovable.app/",
+      "title": "Dr. Chetali Damania — Health & Homeopathy",
+      "screenshot": "C:\\Users\\SIDDHARTH GAJJAR\\.gemini\\antigravity\\scratch\\web_scraping_starter\\scraped_data\\home.png",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Gentle homeopathy,\nhonest answers."
+        },
+        {
+          "tag": "h2",
+          "text": "Eighteen years of listening, looking deeper, treating gently."
+        },
+        {
+          "tag": "h2",
+          "text": "Conditions I treat most"
+        },
+        {
+          "tag": "h2",
+          "text": "Small reminders, between visits."
+        },
+        {
+          "tag": "h2",
+          "text": "Ready when you are."
+        }
+      ],
+      "buttons": [],
+      "forms": [],
+      "text_summary": "h\nHealth & Homeopathy\nHome\nAbout\nConditions\nApproach\nContact\nBook Consultation\n18 YEARS OF PRACTICE\nGentle homeopathy,\nhonest answers.\n\nI’m Dr. Chetali Damania. For nearly two decades I’ve helped families find calm, clarity and quiet healing — while being honest about what homeopathy can, and cannot, do.\n\nBook a consultation\nHow homeopathy differs\nyears experience\n18+\nYEARS EXPERIENCE\ncountries served\n6\nCOUNTRIES SERVED\nUniv. of Goa\nBHMS\nUNIV. OF GOA\nCONSULTING FROM\nGoa · Mumbai · Dubai · Punjab · worldwide\nClinical clarity\n\nA clear diagnosis, in plain language — with options across homeopathy and allopathy.\n\nHonest opinion\n\nIf homeopathy isn’t the right path, I’ll tell you. Your wellbeing comes first.\n\nGentle remedies\n\nIndividualised, side-effect-free care chosen for your full picture.\n\nCare, anywhere\n\nOnline consultations worldwide; in-person visits at the Goa clinic by appointment.\n\n18\nYEARS OF LISTENING\nABOUT DR. CHETALI\nEighteen years of listening, looking deeper, treating gently.\n\nA BHMS graduate from the University of Goa and a gold medalist in Dietetics from Maharashtra, Dr. Chetali brings rigorous clinical training to every consultation. Her practice spans acute illnesses and chronic concerns — with deep expertise in paediatrics, skin, hormonal balance, anxiety and depression.\n\nPatients return year after year because they feel heard. You will leave each visit knowing what is happening, what to expect, and exactly when modern medicine should be the first call.\n\nRead her full story\nAREAS OF FOCUS\nConditions I treat most\nSee all\nPaediatric care\n01\n\nRecurring colds, colic, allergies, behavioural concerns and gentle support as little ones grow.\n\nSkin conditions\n02\n\nEczema, psoriasis, acne, urticaria — treated from within, not just the surface.\n\nHormonal disorders\n03\n\nPCOS, thyroid imbalance, menstrual irregularities and perimenopausal support.\n\nAnxiety & depression\n04\n\nA calm space, careful listening, and remedies that work alongside therapy.\n\nAcute illnesses\n05\n\nFevers, infections, injuries — with honest guidance on when allopathy is needed.\n\nLifestyle & diet\n06\n\nDietetics-informed plans built around your constitution and daily reality.\n\n“She told me what allopathy could do quickly, and what homeopathy could heal slowly. For the first time, I felt like someone was treating me — not my reports.”\n\nPatient since 2014 · Mumbai\nDAILY COMPANION\nSmall reminders, between visits.\n\nShort reels, simple tips and answers to the questions patients ask most — shared on Instagram, Facebook and the WhatsApp channel.\n\nInstagram reels\nFacebook\nWhatsApp channel\nMorning remedy tips\n1:24\nWhen to see a doctor\n0:48\nKids & immunity\n1:02\nSkin, from within\n0:57\nDiet & doshas\n1:15\nA calm mind\n0:39\nBEGIN\nReady when you are.\n\nBook an online consultation from anywhere, or choose an in-person visit at the Goa clinic.\n\nChoose a time\nHealth & Homeopathy\n\nGentle, honest homeopathic care from Dr. Chetali Damania — serving patients across India and abroad for 18 years.\n\nExplore\nAbout Dr. Chetali\nConditions treated\nOur approach\nBook consultation\nContact\nStay connected\n\nOnline consultations worldwide. In-person visits by appointment.\n\n© 2026 Health & Homeopathy. All rights reserved.\nBHMS, University of Goa · Gold Medalist, Dietetics (Maharashtra)\nEdit with",
+      "raw_links": [
+        {
+          "text": "h\nHealth & Homeopathy",
+          "href": "/"
+        },
+        {
+          "text": "Home",
+          "href": "/"
+        },
+        {
+          "text": "About",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions",
+          "href": "/services"
+        },
+        {
+          "text": "Approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "Book Consultation",
+          "href": "/book"
+        },
+        {
+          "text": "Book a consultation",
+          "href": "/book"
+        },
+        {
+          "text": "How homeopathy differs",
+          "href": "/approach"
+        },
+        {
+          "text": "Read her full story",
+          "href": "/about"
+        },
+        {
+          "text": "See all",
+          "href": "/services"
+        },
+        {
+          "text": "Instagram reels",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "Facebook",
+          "href": "https://facebook.com"
+        },
+        {
+          "text": "WhatsApp channel",
+          "href": "https://wa.me/"
+        },
+        {
+          "text": "Morning remedy tips\n1:24",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "When to see a doctor\n0:48",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "Kids & immunity\n1:02",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "Skin, from within\n0:57",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "Diet & doshas\n1:15",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "A calm mind\n0:39",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "Choose a time",
+          "href": "/book"
+        },
+        {
+          "text": "About Dr. Chetali",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions treated",
+          "href": "/services"
+        },
+        {
+          "text": "Our approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Book consultation",
+          "href": "/book"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "",
+          "href": "https://facebook.com"
+        },
+        {
+          "text": "",
+          "href": "https://wa.me/"
+        },
+        {
+          "text": "",
+          "href": "mailto:hello@healthandhomeopathy.com"
+        },
+        {
+          "text": "Edit with",
+          "href": "https://lovable.dev/projects/lovp_2j6hfkcepg8raajyqc27vwrgmp?utm_source=lovable-badge"
+        }
+      ]
+    },
+    {
+      "url": "https://chetali-care-and-consult.lovable.app/about",
+      "title": "About Dr. Chetali Damania — Health & Homeopathy",
+      "screenshot": "C:\\Users\\SIDDHARTH GAJJAR\\.gemini\\antigravity\\scratch\\web_scraping_starter\\scraped_data\\about.png",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Dr. Chetali Damania"
+        },
+        {
+          "tag": "h2",
+          "text": "Why honest medicine matters."
+        }
+      ],
+      "buttons": [],
+      "forms": [],
+      "text_summary": "h\nHealth & Homeopathy\nHome\nAbout\nConditions\nApproach\nContact\nBook Consultation\nABOUT\nDr. Chetali Damania\n\nBHMS, Gold Medalist in Dietetics\n\nFor eighteen years, my work has been simple in intention and careful in practice: to listen closely, look at the whole person, and offer the quietest path back to health.\n\nI trained at the University of Goa and went on to earn a gold medal in Dietetics from Maharashtra. That blend — clinical homeopathy with a strong nutritional foundation — shapes every consultation I do today.\n\nBHMS\nUniversity of Goa\nGold Medalist\nDietetics, Maharashtra\n18 years\nGoa · Mumbai · Dubai · Punjab · Chandigarh · worldwide\nA NOTE FROM DR. CHETALI\nWhy honest medicine matters.\n\nHomeopathy is powerful when it’s the right tool. It is gentle, individualised, and works with the body rather than against it. But it isn’t the answer to every condition — and pretending otherwise does patients harm.\n\nIn every consultation, I’ll share my clinical opinion plainly. If allopathic care is faster or safer for what you’re facing, I will say so. If homeopathy can support healing alongside it, we’ll plan that together. The aim is always your wellbeing — never the loyalty to a system.\n\nI see patients from Goa, Mumbai, Dubai, Punjab, Chandigarh and many more places around India and abroad — most online, some in person. What we build together is a long, calm conversation about your health.\n\nBook a consultation\nHealth & Homeopathy\n\nGentle, honest homeopathic care from Dr. Chetali Damania — serving patients across India and abroad for 18 years.\n\nExplore\nAbout Dr. Chetali\nConditions treated\nOur approach\nBook consultation\nContact\nStay connected\n\nOnline consultations worldwide. In-person visits by appointment.\n\n© 2026 Health & Homeopathy. All rights reserved.\nBHMS, University of Goa · Gold Medalist, Dietetics (Maharashtra)\nEdit with",
+      "raw_links": [
+        {
+          "text": "h\nHealth & Homeopathy",
+          "href": "/"
+        },
+        {
+          "text": "Home",
+          "href": "/"
+        },
+        {
+          "text": "About",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions",
+          "href": "/services"
+        },
+        {
+          "text": "Approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "Book Consultation",
+          "href": "/book"
+        },
+        {
+          "text": "Book a consultation",
+          "href": "/book"
+        },
+        {
+          "text": "About Dr. Chetali",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions treated",
+          "href": "/services"
+        },
+        {
+          "text": "Our approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Book consultation",
+          "href": "/book"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "",
+          "href": "https://facebook.com"
+        },
+        {
+          "text": "",
+          "href": "https://wa.me/"
+        },
+        {
+          "text": "",
+          "href": "mailto:hello@healthandhomeopathy.com"
+        },
+        {
+          "text": "Edit with",
+          "href": "https://lovable.dev/projects/lovp_2j6hfkcepg8raajyqc27vwrgmp?utm_source=lovable-badge"
+        }
+      ]
+    },
+    {
+      "url": "https://chetali-care-and-consult.lovable.app/services",
+      "title": "Conditions Treated — Health & Homeopathy",
+      "screenshot": "C:\\Users\\SIDDHARTH GAJJAR\\.gemini\\antigravity\\scratch\\web_scraping_starter\\scraped_data\\services.png",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "What I treat — and where I’ll refer."
+        },
+        {
+          "tag": "h2",
+          "text": "Paediatric care"
+        },
+        {
+          "tag": "h2",
+          "text": "Skin conditions"
+        },
+        {
+          "tag": "h2",
+          "text": "Hormonal disorders"
+        },
+        {
+          "tag": "h2",
+          "text": "Anxiety & depression"
+        },
+        {
+          "tag": "h2",
+          "text": "Acute illnesses"
+        },
+        {
+          "tag": "h2",
+          "text": "Lifestyle & dietetics"
+        },
+        {
+          "tag": "h2",
+          "text": "Not sure if homeopathy fits your case?"
+        }
+      ],
+      "buttons": [],
+      "forms": [],
+      "text_summary": "h\nHealth & Homeopathy\nHome\nAbout\nConditions\nApproach\nContact\nBook Consultation\nCONDITIONS\nWhat I treat — and where I’ll refer.\n\nEighteen years of practice across paediatrics, skin, hormonal health and mental wellbeing — held together by one principle: be honest about what homeopathy can heal, and what it cannot.\n\nPaediatric care\n\nColic, recurrent colds, allergies, eczema, sleep, appetite and behavioural concerns — with the gentlest possible touch.\n\nWHEN TO LOOK ELSEWHERE\n\nAcute emergencies and serious infections are referred to paediatric allopathy first.\n\nSkin conditions\n\nEczema, psoriasis, urticaria, acne, lichen planus — addressed from constitution, gut and stress, not just topical creams.\n\nWHEN TO LOOK ELSEWHERE\n\nSevere infections, melanomas and surgical lesions require dermatology referral.\n\nHormonal disorders\n\nPCOS, thyroid imbalance, irregular cycles, perimenopause — supported with remedies and dietetics together.\n\nWHEN TO LOOK ELSEWHERE\n\nAcute endocrine emergencies and surgical conditions need allopathic management.\n\nAnxiety & depression\n\nCalm, careful listening with constitutional remedies that complement therapy and lifestyle work.\n\nWHEN TO LOOK ELSEWHERE\n\nSevere or suicidal presentations require psychiatric care; homeopathy supports alongside.\n\nAcute illnesses\n\nFevers, viral infections, injuries, allergic flares — with clear escalation if conventional care is needed.\n\nWHEN TO LOOK ELSEWHERE\n\nRed-flag symptoms always get an urgent allopathic referral.\n\nLifestyle & dietetics\n\nPersonalised nutrition rooted in Maharashtra gold-medal training, tuned to your constitution and routine.\n\nWHEN TO LOOK ELSEWHERE\n\nNot a replacement for surgical or pharmacological management when indicated.\n\nNot sure if homeopathy fits your case?\n\nA short consultation is the most honest way to find out.\n\nBook a consultation\nHealth & Homeopathy\n\nGentle, honest homeopathic care from Dr. Chetali Damania — serving patients across India and abroad for 18 years.\n\nExplore\nAbout Dr. Chetali\nConditions treated\nOur approach\nBook consultation\nContact\nStay connected\n\nOnline consultations worldwide. In-person visits by appointment.\n\n© 2026 Health & Homeopathy. All rights reserved.\nBHMS, University of Goa · Gold Medalist, Dietetics (Maharashtra)\nEdit with",
+      "raw_links": [
+        {
+          "text": "h\nHealth & Homeopathy",
+          "href": "/"
+        },
+        {
+          "text": "Home",
+          "href": "/"
+        },
+        {
+          "text": "About",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions",
+          "href": "/services"
+        },
+        {
+          "text": "Approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "Book Consultation",
+          "href": "/book"
+        },
+        {
+          "text": "Book a consultation",
+          "href": "/book"
+        },
+        {
+          "text": "About Dr. Chetali",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions treated",
+          "href": "/services"
+        },
+        {
+          "text": "Our approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Book consultation",
+          "href": "/book"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "",
+          "href": "https://facebook.com"
+        },
+        {
+          "text": "",
+          "href": "https://wa.me/"
+        },
+        {
+          "text": "",
+          "href": "mailto:hello@healthandhomeopathy.com"
+        },
+        {
+          "text": "Edit with",
+          "href": "https://lovable.dev/projects/lovp_2j6hfkcepg8raajyqc27vwrgmp?utm_source=lovable-badge"
+        }
+      ]
+    },
+    {
+      "url": "https://chetali-care-and-consult.lovable.app/approach",
+      "title": "Our Approach — Homeopathy, Ayurveda & Allopathy compared",
+      "screenshot": "C:\\Users\\SIDDHARTH GAJJAR\\.gemini\\antigravity\\scratch\\web_scraping_starter\\scraped_data\\approach.png",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Three systems. One question: what helps you most?"
+        },
+        {
+          "tag": "h2",
+          "text": "Homeopathy"
+        },
+        {
+          "tag": "h2",
+          "text": "Ayurveda"
+        },
+        {
+          "tag": "h2",
+          "text": "Allopathy"
+        },
+        {
+          "tag": "h2",
+          "text": "How a consultation usually goes"
+        }
+      ],
+      "buttons": [],
+      "forms": [],
+      "text_summary": "h\nHealth & Homeopathy\nHome\nAbout\nConditions\nApproach\nContact\nBook Consultation\nOUR APPROACH\nThree systems. One question: what helps you most?\n\nHealing isn’t a competition between traditions. Each system has its strengths and its honest limits. Here’s how I think about choosing between them — and why I’ll always tell you the truth about both.\n\nHomeopathy\nMY PRACTICE\n\nLike cures like — minute doses that prompt the body to heal itself.\n\nSTRENGTHS\nIndividualised to the whole person\nGentle, side-effect-free\nStrong in chronic, recurring and constitutional conditions\nHONEST LIMITS\nSlower in some chronic cases\nNot first-line for acute emergencies or surgery\nAyurveda\n\nBalancing doshas through diet, lifestyle, herbs and detoxification.\n\nSTRENGTHS\nLifestyle and digestion-focused\nRich herbal pharmacopoeia\nPreventive wisdom\nHONEST LIMITS\nVariable standardisation of formulations\nNot designed for acute critical care\nAllopathy\n\nTargeting disease mechanisms with pharmacology, surgery and diagnostics.\n\nSTRENGTHS\nFast in acute and emergency care\nRigorous diagnostics and imaging\nEssential for surgical and life-threatening conditions\nHONEST LIMITS\nSide effects in long-term use\nCan overlook the whole-person context\nHow a consultation usually goes\n1\nA long, quiet conversation\n\nWe talk about your story — symptoms, sleep, stress, history, family. The full picture matters.\n\n2\nA clear clinical opinion\n\nI’ll share my assessment in plain language, and what I’d recommend across systems.\n\n3\nA gentle, personalised plan\n\nRemedy, dietary support and follow-up rhythm — built around your reality.\n\n4\nOpen follow-ups\n\nAdjustments are made as you respond. You’re never on your own between visits.\n\nBook a consultation\nHealth & Homeopathy\n\nGentle, honest homeopathic care from Dr. Chetali Damania — serving patients across India and abroad for 18 years.\n\nExplore\nAbout Dr. Chetali\nConditions treated\nOur approach\nBook consultation\nContact\nStay connected\n\nOnline consultations worldwide. In-person visits by appointment.\n\n© 2026 Health & Homeopathy. All rights reserved.\nBHMS, University of Goa · Gold Medalist, Dietetics (Maharashtra)\nEdit with",
+      "raw_links": [
+        {
+          "text": "h\nHealth & Homeopathy",
+          "href": "/"
+        },
+        {
+          "text": "Home",
+          "href": "/"
+        },
+        {
+          "text": "About",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions",
+          "href": "/services"
+        },
+        {
+          "text": "Approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "Book Consultation",
+          "href": "/book"
+        },
+        {
+          "text": "Book a consultation",
+          "href": "/book"
+        },
+        {
+          "text": "About Dr. Chetali",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions treated",
+          "href": "/services"
+        },
+        {
+          "text": "Our approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Book consultation",
+          "href": "/book"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "",
+          "href": "https://facebook.com"
+        },
+        {
+          "text": "",
+          "href": "https://wa.me/"
+        },
+        {
+          "text": "",
+          "href": "mailto:hello@healthandhomeopathy.com"
+        },
+        {
+          "text": "Edit with",
+          "href": "https://lovable.dev/projects/lovp_2j6hfkcepg8raajyqc27vwrgmp?utm_source=lovable-badge"
+        }
+      ]
+    },
+    {
+      "url": "https://chetali-care-and-consult.lovable.app/contact",
+      "title": "Contact — Health & Homeopathy",
+      "screenshot": "C:\\Users\\SIDDHARTH GAJJAR\\.gemini\\antigravity\\scratch\\web_scraping_starter\\scraped_data\\contact.png",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "A calm message away."
+        }
+      ],
+      "buttons": [],
+      "forms": [],
+      "text_summary": "h\nHealth & Homeopathy\nHome\nAbout\nConditions\nApproach\nContact\nBook Consultation\nCONTACT\nA calm message away.\n\nChoose whichever way is easiest for you.\n\nWhatsApp channel\nDaily reminders and quick answers\nInstagram reels\n@dr.chetali\nFacebook\nHealth & Homeopathy\nEmail\nhello@healthandhomeopathy.com\nClinic\n\nHealth & Homeopathy\nDr. Chetali Damania’s clinic\nGoa, India\n\nIn-person visits by appointment.\n\nHours\nMon – Fri\n9:30 – 18:30\nSaturday\n10:00 – 14:00\nSunday\nClosed\nHealth & Homeopathy\n\nGentle, honest homeopathic care from Dr. Chetali Damania — serving patients across India and abroad for 18 years.\n\nExplore\nAbout Dr. Chetali\nConditions treated\nOur approach\nBook consultation\nContact\nStay connected\n\nOnline consultations worldwide. In-person visits by appointment.\n\n© 2026 Health & Homeopathy. All rights reserved.\nBHMS, University of Goa · Gold Medalist, Dietetics (Maharashtra)\nEdit with",
+      "raw_links": [
+        {
+          "text": "h\nHealth & Homeopathy",
+          "href": "/"
+        },
+        {
+          "text": "Home",
+          "href": "/"
+        },
+        {
+          "text": "About",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions",
+          "href": "/services"
+        },
+        {
+          "text": "Approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "Book Consultation",
+          "href": "/book"
+        },
+        {
+          "text": "WhatsApp channel\nDaily reminders and quick answers",
+          "href": "https://wa.me/"
+        },
+        {
+          "text": "Instagram reels\n@dr.chetali",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "Facebook\nHealth & Homeopathy",
+          "href": "https://facebook.com"
+        },
+        {
+          "text": "Email\nhello@healthandhomeopathy.com",
+          "href": "mailto:hello@healthandhomeopathy.com"
+        },
+        {
+          "text": "About Dr. Chetali",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions treated",
+          "href": "/services"
+        },
+        {
+          "text": "Our approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Book consultation",
+          "href": "/book"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "",
+          "href": "https://facebook.com"
+        },
+        {
+          "text": "",
+          "href": "https://wa.me/"
+        },
+        {
+          "text": "",
+          "href": "mailto:hello@healthandhomeopathy.com"
+        },
+        {
+          "text": "Edit with",
+          "href": "https://lovable.dev/projects/lovp_2j6hfkcepg8raajyqc27vwrgmp?utm_source=lovable-badge"
+        }
+      ]
+    },
+    {
+      "url": "https://chetali-care-and-consult.lovable.app/book",
+      "title": "Book an Appointment — Health & Homeopathy",
+      "screenshot": "C:\\Users\\SIDDHARTH GAJJAR\\.gemini\\antigravity\\scratch\\web_scraping_starter\\scraped_data\\book.png",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Choose a quiet time."
+        },
+        {
+          "tag": "h2",
+          "text": "Online booking opens shortly."
+        }
+      ],
+      "buttons": [],
+      "forms": [],
+      "text_summary": "h\nHealth & Homeopathy\nHome\nAbout\nConditions\nApproach\nContact\nBook Consultation\nAPPOINTMENTS\nChoose a quiet time.\n\nOnline consultations worldwide, in-person at the Goa clinic. Pick a slot below and you’ll get an instant confirmation with a reschedule link.\n\nOnline booking opens shortly.\n\nDr. Chetali’s live calendar will appear right here — pick a time, get an instant confirmation. Until it’s switched on, request your appointment directly and we’ll confirm personally.\n\nRequest on WhatsApp\nEmail the clinic\n\nReplies within a few hours, Monday–Saturday.\n\nBefore your visit\nBring or list current medicines and reports, if any.\nNote when your main concern began and what changes it.\nFirst consultations run about 45 minutes; follow-ups 20.\nOnline\n\nA quiet video room, anywhere in the world. Mumbai, Dubai, Punjab, Chandigarh and beyond — the link arrives with your confirmation.\n\nIn person\n\nThe Goa clinic, by appointment. Choose “in person” when you pick your slot and we’ll share directions.\n\nClinic hours\nMon – Fri\n9:30 – 18:30\nSaturday\n10:00 – 14:00\nSunday\nClosed\nHealth & Homeopathy\n\nGentle, honest homeopathic care from Dr. Chetali Damania — serving patients across India and abroad for 18 years.\n\nExplore\nAbout Dr. Chetali\nConditions treated\nOur approach\nBook consultation\nContact\nStay connected\n\nOnline consultations worldwide. In-person visits by appointment.\n\n© 2026 Health & Homeopathy. All rights reserved.\nBHMS, University of Goa · Gold Medalist, Dietetics (Maharashtra)\nEdit with",
+      "raw_links": [
+        {
+          "text": "h\nHealth & Homeopathy",
+          "href": "/"
+        },
+        {
+          "text": "Home",
+          "href": "/"
+        },
+        {
+          "text": "About",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions",
+          "href": "/services"
+        },
+        {
+          "text": "Approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "Book Consultation",
+          "href": "/book"
+        },
+        {
+          "text": "Request on WhatsApp",
+          "href": "https://wa.me/"
+        },
+        {
+          "text": "Email the clinic",
+          "href": "mailto:hello@healthandhomeopathy.com?subject=Appointment%20request"
+        },
+        {
+          "text": "About Dr. Chetali",
+          "href": "/about"
+        },
+        {
+          "text": "Conditions treated",
+          "href": "/services"
+        },
+        {
+          "text": "Our approach",
+          "href": "/approach"
+        },
+        {
+          "text": "Book consultation",
+          "href": "/book"
+        },
+        {
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "text": "",
+          "href": "https://instagram.com"
+        },
+        {
+          "text": "",
+          "href": "https://facebook.com"
+        },
+        {
+          "text": "",
+          "href": "https://wa.me/"
+        },
+        {
+          "text": "",
+          "href": "mailto:hello@healthandhomeopathy.com"
+        },
+        {
+          "text": "Edit with",
+          "href": "https://lovable.dev/projects/lovp_2j6hfkcepg8raajyqc27vwrgmp?utm_source=lovable-badge"
+        }
+      ]
+    }
+  ]
+}

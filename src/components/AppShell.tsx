@@ -1,4 +1,5 @@
-import { Link, useLocation } from "@tanstack/react-router";
+import React, { ReactNode } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   Bell,
   Home,
@@ -7,24 +8,21 @@ import {
   Pill,
   User,
   Leaf,
+  ShieldCheck,
+  Clock,
   Users,
   Send,
   Sliders,
-  Clock,
-  ShieldCheck,
 } from "lucide-react";
-import type { ReactNode } from "react";
-import { toast } from "sonner";
-import { useApp, type DoctorTab } from "@/lib/app-store";
-import { cn } from "@/lib/utils";
+import { useApp, DoctorTab } from "../context/AppContext";
 
 const PATIENT_NAV = [
   { to: "/", label: "Home", icon: Home },
-  { to: "/conditions", label: "Conditions", icon: Stethoscope },
+  { to: "/conditions", label: "Specialties", icon: Stethoscope },
   { to: "/book", label: "Book", icon: CalendarDays },
   { to: "/medicines", label: "Medicines", icon: Pill },
-  { to: "/profile", label: "Records", icon: User },
-] as const;
+  { to: "/records", label: "Records", icon: User },
+];
 
 const DOCTOR_NAV: { tab: DoctorTab; label: string; icon: typeof Clock }[] = [
   { tab: "queue", label: "Queue", icon: Clock },
@@ -33,37 +31,36 @@ const DOCTOR_NAV: { tab: DoctorTab; label: string; icon: typeof Clock }[] = [
   { tab: "settings", label: "Settings", icon: Sliders },
 ];
 
-export function AppShell({ children }: { children: ReactNode }) {
-  const { role, setRole, doctorTab, setDoctorTab, appointments, orders } = useApp();
-  const { pathname } = useLocation();
-  const hideChrome = pathname.startsWith("/consult");
-
-  if (hideChrome) return <>{children}</>;
-
+export const AppShell: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const { role, setRole, doctorTab, setDoctorTab, showToast } = useApp();
+  const location = useLocation();
   const isDoctor = role === "doctor";
+  const hideChrome = location.pathname.startsWith("/consult");
+
+  if (hideChrome) {
+    return <>{children}</>;
+  }
 
   return (
-    <div className={cn("mx-auto min-h-screen max-w-md pb-24 transition-colors", isDoctor ? "bg-[#F7F9F8]" : "bg-background")}>
-      {/* Header */}
+    <div className={`mx-auto min-h-screen max-w-md pb-24 transition-colors ${isDoctor ? "bg-[#F7F9F8]" : "bg-[#FBF9F5]"}`}>
+      {/* Top Header */}
       <header
-        className={cn(
-          "sticky top-0 z-30 border-b px-4 pb-3 pt-3 backdrop-blur transition-colors",
-          isDoctor ? "border-emerald-900/10 bg-emerald-950 text-white" : "border-border bg-background/90"
-        )}
+        className={`sticky top-0 z-30 border-b px-4 pb-3 pt-3 backdrop-blur transition-colors ${
+          isDoctor ? "border-emerald-900/10 bg-emerald-950 text-white" : "border-[#E8E4DC] bg-[#FBF9F5]/90 text-[#1B3B2B]"
+        }`}
       >
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5">
             <span
-              className={cn(
-                "grid h-9 w-9 place-items-center rounded-full text-primary-foreground",
-                isDoctor ? "bg-emerald-600" : "bg-gradient-forest"
-              )}
+              className={`grid h-9 w-9 place-items-center rounded-full text-white ${
+                isDoctor ? "bg-emerald-600" : "bg-[#2D5A43]"
+              }`}
             >
               {isDoctor ? <Stethoscope className="h-4 w-4" /> : <Leaf className="h-4 w-4" />}
             </span>
             <div className="leading-tight">
               <div className="flex items-center gap-1.5">
-                <p className={cn("font-serif text-lg font-semibold", isDoctor ? "text-white" : "text-forest")}>
+                <p className={`font-serif text-lg font-bold ${isDoctor ? "text-white" : "text-[#1B3B2B]"}`}>
                   {isDoctor ? "Dr. Chetali Damania" : "Health & Homeopathy"}
                 </p>
                 {isDoctor && (
@@ -72,80 +69,77 @@ export function AppShell({ children }: { children: ReactNode }) {
                   </span>
                 )}
               </div>
-              <p className={cn("text-[11px]", isDoctor ? "text-emerald-200/80" : "text-muted-foreground")}>
-                {isDoctor ? "BHMS (Goa) · Reg. GHC-2451" : "Hello, Aarav 👋"}
+              <p className={`text-[11px] ${isDoctor ? "text-emerald-200/80" : "text-[#5A685F]"}`}>
+                {isDoctor ? "CCAH · Medalist in BHMS · Reg. GHC-2451" : "Hello, Aarav 👋"}
               </p>
             </div>
           </Link>
+
           <button
             aria-label="Notifications"
             onClick={() =>
-              toast(isDoctor ? "2 patients in waiting room for video consult 🔔" : "Your Blue Dart parcel is in transit 📦")
+              showToast(isDoctor ? "2 patients in waiting room for video consult 🔔" : "Your Blue Dart parcel is in transit 📦")
             }
-            className={cn(
-              "relative grid h-10 w-10 place-items-center rounded-full border transition-colors",
-              isDoctor ? "border-emerald-800 bg-emerald-900/60 text-emerald-200" : "border-border bg-card text-forest"
-            )}
+            className={`relative grid h-10 w-10 place-items-center rounded-full border transition-colors ${
+              isDoctor
+                ? "border-emerald-800 bg-emerald-900/60 text-emerald-200"
+                : "border-[#E8E4DC] bg-white text-[#1B3B2B]"
+            }`}
           >
             <Bell className="h-4 w-4" />
-            <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-accent" />
+            <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-[#D97757]" />
           </button>
         </div>
 
         {/* Global Role Switcher */}
         <div
-          className={cn(
-            "mt-3 grid grid-cols-2 rounded-full p-1 text-xs font-medium transition-colors",
-            isDoctor ? "bg-emerald-900/70" : "bg-muted"
-          )}
+          className={`mt-3 grid grid-cols-2 rounded-full p-1 text-xs font-medium transition-colors ${
+            isDoctor ? "bg-emerald-900/70" : "bg-[#EFECE6]"
+          }`}
         >
           <button
             onClick={() => setRole("patient")}
-            className={cn(
-              "rounded-full py-1.5 transition",
-              !isDoctor ? "bg-card text-forest shadow-soft" : "text-emerald-200/70 hover:text-white"
-            )}
+            className={`rounded-full py-1.5 transition ${
+              !isDoctor ? "bg-white text-[#1B3B2B] shadow-sm font-semibold" : "text-emerald-200/70 hover:text-white"
+            }`}
           >
             Patient View
           </button>
           <button
             onClick={() => setRole("doctor")}
-            className={cn(
-              "flex items-center justify-center gap-1.5 rounded-full py-1.5 transition",
-              isDoctor ? "bg-emerald-700 text-white shadow-soft" : "text-muted-foreground hover:text-forest"
-            )}
+            className={`rounded-full py-1.5 transition ${
+              isDoctor ? "bg-emerald-700 text-white shadow-sm font-semibold" : "text-[#5A685F] hover:text-[#1B3B2B]"
+            }`}
           >
             Doctor View (Dr. Chetali)
           </button>
         </div>
       </header>
 
-      {/* Main Content Area */}
+      {/* Main Page Content */}
       <main className="px-4 pt-4">{children}</main>
 
-      {/* Role-Specific Bottom Navigation Bar */}
+      {/* Role-Specific Navigation Bar */}
       <nav
-        className={cn(
-          "fixed inset-x-0 bottom-0 z-30 mx-auto max-w-md border-t backdrop-blur",
-          isDoctor ? "border-emerald-900/20 bg-emerald-950/95 text-white" : "border-border bg-card/95"
-        )}
+        className={`fixed inset-x-0 bottom-0 z-30 mx-auto max-w-md border-t backdrop-blur ${
+          isDoctor ? "border-emerald-900/20 bg-emerald-950/95 text-white" : "border-[#E8E4DC] bg-white/95 text-[#1B3B2B]"
+        }`}
       >
         {isDoctor ? (
-          /* DOCTOR NAVIGATION */
+          /* Doctor Console Tabs */
           <ul className="grid grid-cols-4">
             {DOCTOR_NAV.map(({ tab, label, icon: Icon }) => {
-              const active = pathname === "/" && doctorTab === tab;
+              const active = location.pathname === "/" && doctorTab === tab;
               return (
                 <li key={tab}>
                   <Link
                     to="/"
                     onClick={() => setDoctorTab(tab)}
-                    className={cn(
-                      "flex flex-col items-center gap-1 py-2.5 text-[11px] transition-colors",
-                      active ? "text-white font-medium" : "text-emerald-300/60 hover:text-emerald-200"
-                    )}
+                    className={`flex flex-col items-center gap-1 py-2.5 text-[11px] transition-colors ${
+                      active ? "text-white font-semibold" : "text-emerald-300/60 hover:text-emerald-200"
+                    }`}
                   >
-                    <span className={cn("rounded-full px-3 py-1 transition-colors", active && "bg-emerald-800")}>
+                    <span className={`rounded-full px-3 py-1 transition-colors ${active ? "bg-emerald-800" : ""}`}>
                       <Icon className="h-5 w-5" />
                     </span>
                     {label}
@@ -155,20 +149,19 @@ export function AppShell({ children }: { children: ReactNode }) {
             })}
           </ul>
         ) : (
-          /* PATIENT NAVIGATION */
+          /* Patient Tabs */
           <ul className="grid grid-cols-5">
             {PATIENT_NAV.map(({ to, label, icon: Icon }) => {
-              const active = to === "/" ? pathname === "/" : pathname.startsWith(to);
+              const active = to === "/" ? location.pathname === "/" : location.pathname.startsWith(to);
               return (
                 <li key={to}>
                   <Link
                     to={to}
-                    className={cn(
-                      "flex flex-col items-center gap-1 py-2.5 text-[11px]",
-                      active ? "text-primary font-medium" : "text-muted-foreground"
-                    )}
+                    className={`flex flex-col items-center gap-1 py-2.5 text-[11px] transition-colors ${
+                      active ? "text-[#2D5A43] font-semibold" : "text-[#5A685F] hover:text-[#1B3B2B]"
+                    }`}
                   >
-                    <span className={cn("rounded-full px-3 py-1", active && "bg-secondary")}>
+                    <span className={`rounded-full px-3 py-1 transition-colors ${active ? "bg-[#EBF4EF]" : ""}`}>
                       <Icon className="h-5 w-5" />
                     </span>
                     {label}
@@ -181,17 +174,4 @@ export function AppShell({ children }: { children: ReactNode }) {
       </nav>
     </div>
   );
-}
-
-export function SectionTitle({ title, action }: { title: string; action?: ReactNode }) {
-  return (
-    <div className="mb-3 mt-6 flex items-end justify-between">
-      <h2 className="text-2xl text-forest">{title}</h2>
-      {action}
-    </div>
-  );
-}
-
-export function Card({ className, children }: { className?: string; children: ReactNode }) {
-  return <div className={cn("rounded-2xl border border-border bg-card p-4 shadow-soft", className)}>{children}</div>;
-}
+};

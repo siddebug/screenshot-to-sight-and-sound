@@ -1,17 +1,21 @@
-import { QueryClient } from "@tanstack/react-query";
-import { createRouter, rootRouteId } from "@tanstack/react-router";
 import { describe, expect, it } from "vitest";
+import { CLINICAL_SPECIALTIES, COURIER_CONFIGS } from "../data/mockData";
 
-import { routeTree } from "@/routeTree.gen";
+describe("Medicate Core Domain Models", () => {
+  it("provides clinical specialties with explicit homeopathy vs allopathy triage boundaries", () => {
+    expect(CLINICAL_SPECIALTIES.length).toBe(11);
+    CLINICAL_SPECIALTIES.forEach((specialty) => {
+      expect(specialty.name).toBeTruthy();
+      expect(specialty.helps.length).toBeGreaterThan(0);
+      expect(specialty.refer.length).toBeGreaterThan(0);
+    });
+  });
 
-// Match routes without running loaders or rendering: loaders may need a server or
-// network the test run lacks, and jsdom never loads the stylesheets React waits on.
-describe("App routing", () => {
-  it("matches a page for / instead of falling back to not found", () => {
-    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
-
-    const matches = router.matchRoutes("/");
-
-    expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
+  it("configures direct URL interpolation for supported couriers", () => {
+    expect(COURIER_CONFIGS.bluedart.getUrl("TEST123AWB")).toContain("TEST123AWB");
+    expect(COURIER_CONFIGS.delhivery.getUrl("TEST123AWB")).toContain("TEST123AWB");
+    expect(COURIER_CONFIGS.dtdc.getUrl("TEST123AWB")).toContain("TEST123AWB");
+    expect(COURIER_CONFIGS.dhl.getUrl("TEST123AWB")).toContain("TEST123AWB");
+    expect(COURIER_CONFIGS.fedex.getUrl("TEST123AWB")).toContain("TEST123AWB");
   });
 });
