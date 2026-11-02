@@ -274,12 +274,18 @@ export const INITIAL_PRESCRIPTION: Prescription = {
   ],
 };
 
+export const CLINIC_WHATSAPP = {
+  raw: "+91 98201 12345",
+  clean: "919820112345",
+  display: "+91 98201 12345",
+};
+
 export const INITIAL_QUEUE: Appointment[] = [
-  { id: "q1", time: "10:00", date: "Today", patientName: "Priya Nair", country: "🇦🇪 UAE", complaint: "PMOS follow-up & cycle review", kind: "Follow-up", mode: "online", status: "Completed" },
-  { id: "q2", time: "11:30", date: "Today", patientName: "Aarav Mehta", country: "🇮🇳 India", complaint: "Allergic rhinitis & seasonal flare", kind: "Follow-up", mode: "online", status: "In Progress" },
-  { id: "q3", time: "14:00", date: "Today", patientName: "Sarah Collins", country: "🇬🇧 UK", complaint: "Childhood eczema initial intake", kind: "Comprehensive", mode: "online", status: "Upcoming" },
-  { id: "q4", time: "16:15", date: "Today", patientName: "Rohan D'Souza", country: "🇮🇳 Goa Clinic", complaint: "Child's recurrent cough & colic", kind: "Comprehensive", mode: "clinic", status: "Upcoming" },
-  { id: "q5", time: "19:00", date: "Today", patientName: "Meera Iyer", country: "🇺🇸 US", complaint: "Anxiety & sleep irregularity", kind: "Follow-up", mode: "online", status: "Upcoming" },
+  { id: "q1", time: "10:00", date: "Today", patientName: "Priya Nair", country: "🇦🇪 UAE", patientPhone: "+971 50 123 4567", patientWhatsApp: "971501234567", complaint: "PMOS follow-up & cycle review", kind: "Follow-up", mode: "online", status: "Completed" },
+  { id: "q2", time: "11:30", date: "Today", patientName: "Aarav Mehta", country: "🇮🇳 India", patientPhone: "+91 98201 88410", patientWhatsApp: "919820188410", complaint: "Allergic rhinitis & seasonal flare", kind: "Follow-up", mode: "online", status: "In Progress" },
+  { id: "q3", time: "14:00", date: "Today", patientName: "Sarah Collins", country: "🇬🇧 UK", patientPhone: "+44 7911 123456", patientWhatsApp: "447911123456", complaint: "Childhood eczema initial intake", kind: "Comprehensive", mode: "online", status: "Upcoming" },
+  { id: "q4", time: "16:15", date: "Today", patientName: "Rohan D'Souza", country: "🇮🇳 Goa Clinic", patientPhone: "+91 98221 44556", patientWhatsApp: "919822144556", complaint: "Child's recurrent cough & colic", kind: "Comprehensive", mode: "clinic", status: "Upcoming" },
+  { id: "q5", time: "19:00", date: "Today", patientName: "Meera Iyer", country: "🇺🇸 US", patientPhone: "+1 415 555 2671", patientWhatsApp: "14155552671", complaint: "Anxiety & sleep irregularity", kind: "Follow-up", mode: "online", status: "Upcoming" },
 ];
 
 export const INITIAL_REPORTS = [

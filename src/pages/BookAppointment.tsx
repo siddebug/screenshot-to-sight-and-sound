@@ -172,8 +172,8 @@ export const BookAppointment: React.FC = () => {
             {
               id: "online",
               icon: Globe,
-              title: "Online Video Consultation",
-              desc: "Consult worldwide from India, UAE, UK, US in HD video room.",
+              title: "Online WhatsApp Video Consultation",
+              desc: "Consult worldwide. Video call is initiated directly by Dr. Chetali to your registered WhatsApp.",
             },
             {
               id: "clinic",

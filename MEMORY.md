@@ -38,9 +38,18 @@
 | [`src/pages/Home.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/pages/Home.tsx) | Countdown timer, doctor credentials, quick actions, daily video reels modal |
 | [`src/pages/Conditions.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/pages/Conditions.tsx) | 6 specialties with transparent "Where Homeopathy Helps" vs "When to See Allopathy / ER" |
 | [`src/pages/BookAppointment.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/pages/BookAppointment.tsx) | 5-step booking wizard with calendar slot selection, lab report uploader, dynamic fee calculation, printable receipt |
-| [`src/pages/VideoConsult.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/pages/VideoConsult.tsx) | Virtual waiting room, webcam preview, live call timer (`00:01`, `00:02`...), in-call chat, notes drawer |
+| [`src/pages/VideoConsult.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/pages/VideoConsult.tsx) | Virtual waiting room with text-only patient check-in & doctor-exclusive WhatsApp video call initiation, in-call chat, case notes |
 | [`src/pages/Medicines.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/pages/Medicines.tsx) | Signed e-prescription card, 4-stage tracking stepper, 1-tap courier redirection + AWB copy toast |
 | [`src/pages/Records.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/pages/Records.tsx) | Patient health passport, encrypted diagnostic reports vault, report preview modal, upload report dialog, consultation history |
+
+## Architecture & Database Design Artifact
+- Comprehensive 100% Free / Zero-Cost architecture documented in:
+  `medicate_architecture_and_database_design.md` (Artifact).
+- **Zero-Cost Stack Highlights:**
+  - Video: **Direct WhatsApp Video Call Trigger** (`https://wa.me/<number>?text=...`). **Asymmetric Communication Policy:** ONLY the doctor (Dr. Chetali) has the authority to initiate video calls to the patient; patients have text-only permissions (via WhatsApp text check-in or chat) to maintain clinical boundaries and prevent unscheduled calls.
+  - Backend Alternative to Supabase: **PocketBase** (lightweight single-binary Go backend with embedded SQLite, built-in Auth, Realtime SSE events, and file storage) or self-hosted Node.js + SQLite/Drizzle.
+  - Payments: Direct 0% commission UPI Intent & Dynamic QR Generator (`upi://pay?pa=...`) with UTR reference verification.
+  - Logistics: Direct public AWB deep links (Blue Dart, Delhivery, DTDC, India Post, DHL, FedEx) with zero aggregator API costs.
 
 ---
 
@@ -86,7 +95,7 @@
 ---
 
 ## Latest Deployment & Git Status
-- **Commit SHA:** `19911d4b9d957c23bfa905921de6622170e2cdce`
-- **Branch:** `main`
-- **Target Repo:** `https://github.com/siddebug/Medicate`
-- **Status:** All 51 files synchronized cleanly using atomic Git Tree API. All legacy Lovable and TanStack files purged.
+- **Repositories Synchronized:**
+  - **Medicate Standalone:** [`https://github.com/siddebug/Medicate`](https://github.com/siddebug/Medicate) — Commit `8141406c` (`main` branch)
+  - **Lovable Connected:** [`https://github.com/siddebug/screenshot-to-sight-and-sound`](https://github.com/siddebug/screenshot-to-sight-and-sound) — Commit `cecd0562` (`main` branch)
+- **Status:** All 51 files synchronized cleanly across both repositories with atomic Git Tree API. All credentials and 11 clinical specialties updated.

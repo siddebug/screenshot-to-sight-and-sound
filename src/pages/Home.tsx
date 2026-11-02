@@ -6,6 +6,7 @@ import {
   Upload,
   MessageCircle,
   Video,
+  Clock,
   Award,
   Globe,
   GraduationCap,
@@ -90,7 +91,7 @@ const PatientHome: React.FC<{ nextApp: any }> = ({ nextApp }) => {
             to="/consult"
             className="flex items-center gap-2 rounded-full bg-[#D97757] px-4 py-2.5 text-xs font-bold text-white shadow-md hover:bg-[#c86646] transition"
           >
-            <Video className="h-4 w-4" /> Enter Video Room
+            <Clock className="h-4 w-4" /> Enter Waiting Room
           </Link>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FileText,
-  Video,
+  PhoneCall,
   Send,
   X,
   Plus,
@@ -152,7 +152,7 @@ export const DoctorConsole: React.FC = () => {
                       to="/consult"
                       className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-emerald-800 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-emerald-900 transition"
                     >
-                      <Video className="h-4 w-4" /> Start Video Room
+                      <PhoneCall className="h-4 w-4" /> Start WhatsApp Video
                     </Link>
                   )}
                   <button

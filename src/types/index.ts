@@ -32,6 +32,8 @@ export interface Appointment {
   date: string;
   time: string;
   patientName: string;
+  patientPhone?: string;
+  patientWhatsApp?: string;
   complaint?: string;
   country?: string;
   status: "Upcoming" | "In Progress" | "Completed";
