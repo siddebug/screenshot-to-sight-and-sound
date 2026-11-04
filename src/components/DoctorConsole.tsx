@@ -275,6 +275,30 @@ export const DoctorConsole: React.FC = () => {
                   value={form.remedy}
                   onChange={(e) => setForm({ ...form, remedy: e.target.value })}
                 />
+
+                {/* Quick Remedy Suggestion Pills */}
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {[
+                    "Pulsatilla 200",
+                    "Arnica Montana 30C",
+                    "Rhus Tox 30C",
+                    "Arsenicum Album 30C",
+                    "Natrum Mur 6X",
+                    "Nux Vomica 200",
+                    "Thuja Occ. 200",
+                    "Silicea 12X",
+                    "Lycopodium 30C",
+                  ].map((rem) => (
+                    <button
+                      key={rem}
+                      type="button"
+                      onClick={() => setForm({ ...form, remedy: rem })}
+                      className="rounded-full bg-[#EBF4EF] px-2.5 py-1 text-[10px] font-semibold text-[#2D5A43] hover:bg-emerald-200 transition"
+                    >
+                      + {rem}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <div className="grid grid-cols-2 gap-2">
@@ -312,7 +336,29 @@ export const DoctorConsole: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="text-xs text-[#5A685F] block mb-1">AWB / Consignment Tracking No.</label>
+                  <div className="flex items-center justify-between mb-1">
+                    <label className="text-xs text-[#5A685F]">AWB Consignment No.</label>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const prefixes: Record<string, string> = {
+                          bluedart: "BD",
+                          delhivery: "DL",
+                          dtdc: "DT",
+                          indiapost: "EM",
+                          dhl: "DHL",
+                          fedex: "FX",
+                        };
+                        const pre = prefixes[form.courier] || "TRK";
+                        const num = Math.floor(100000000 + Math.random() * 900000000);
+                        const suffix = ["bluedart", "indiapost"].includes(form.courier) ? "IN" : "";
+                        setForm({ ...form, awb: `${pre}${num}${suffix}` });
+                      }}
+                      className="text-[10px] text-[#2D5A43] hover:underline font-bold"
+                    >
+                      🎲 Generate Sample AWB
+                    </button>
+                  </div>
                   <input
                     className="w-full rounded-xl border border-[#E8E4DC] bg-white p-2.5 text-xs font-mono text-[#1B3B2B]"
                     placeholder="e.g. BD849201928IN"
@@ -451,13 +497,30 @@ export const DoctorConsole: React.FC = () => {
             </div>
             <div className="mt-3 space-y-2 rounded-xl border border-[#E8E4DC] bg-[#FBF9F5] p-4 font-mono text-xs">
               <p className="font-bold text-emerald-900">CITY DIAGNOSTICS LAB — Panaji, Goa</p>
-              <p>Patient: Aarav Mehta (Age 34, M)</p>
+              <p>Patient: Aarav Mehta (Age 34, M) · Case #CD-8841</p>
               <p className="text-[#5A685F]">----------------------------------------</p>
               <p>Haemoglobin ........ 13.4 g/dL (13–17)</p>
               <p>WBC ................ 7,800 /µL (4k–11k)</p>
               <p className="text-amber-700 font-bold">Eosinophils ........ 8% ↑ (Normal 1–6%)</p>
               <p>TSH ................ 2.1 µIU/mL (0.4–4.0)</p>
               <p className="text-amber-700 font-bold">Total IgE .......... 310 IU/mL ↑ (Allergic flare)</p>
+              <p className="text-[#5A685F]">----------------------------------------</p>
+              <p className="text-emerald-800 font-semibold font-sans">
+                Clinical Finding: Elevated IgE and peripheral eosinophilia corroborate seasonal atopic rhinitis.
+              </p>
+            </div>
+
+            <div className="mt-3 space-y-2">
+              <button
+                type="button"
+                onClick={() => {
+                  showToast(`Lab report "${pdfModal}" marked as reviewed in Patient EMR`);
+                  setPdfModal(null);
+                }}
+                className="w-full rounded-xl bg-emerald-800 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-emerald-900 transition"
+              >
+                Mark as Clinically Reviewed & Sign
+              </button>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useMemo, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   Globe,
   Building2,
@@ -9,6 +9,7 @@ import {
   ChevronLeft,
 } from "lucide-react";
 import { useApp } from "../context/AppContext";
+import { UpiPaymentFlow } from "../components/UpiPaymentFlow";
 
 const SLOTS = {
   Morning: ["09:30", "10:15", "11:00", "11:45"],
@@ -20,6 +21,7 @@ const STEPS = ["Type", "Duration", "Slot", "Intake", "Checkout"];
 
 export const BookAppointment: React.FC = () => {
   const { addAppointment, fees, addReport, showToast } = useApp();
+  const location = useLocation();
 
   const [step, setStep] = useState(0);
   const [mode, setMode] = useState<"online" | "clinic">("online");
@@ -38,14 +40,25 @@ export const BookAppointment: React.FC = () => {
   const [time, setTime] = useState<string | null>(null);
   const [intake, setIntake] = useState({ complaint: "", onset: "", meds: "" });
   const [files, setFiles] = useState<string[]>([]);
-  const [payMethod, setPayMethod] = useState("UPI");
+  const [payMethod, setPayMethod] = useState("Direct UPI");
   const [isBooked, setIsBooked] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
 
+  // Pre-fill chief complaint if redirected from a Specialty in Conditions.tsx
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const spec = params.get("specialty");
+    if (spec) {
+      const cleanSpec = spec.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+      setIntake((prev) => ({
+        ...prev,
+        complaint: `Consultation for ${cleanSpec}`,
+      }));
+    }
+  }, [location]);
+
   const feeAmount = kind === "Comprehensive" ? fees.comprehensive : fees.followUp;
-  const platformFee = mode === "online" ? 50 : 0;
-  const gst = Math.round((feeAmount + platformFee) * 0.18);
-  const totalAmount = feeAmount + platformFee + gst;
+  const totalAmount = feeAmount;
 
   const isSunday = (d: Date) => d.getDay() === 0;
   const isSlotAllowed = (d: Date, t: string) => {
@@ -62,8 +75,10 @@ export const BookAppointment: React.FC = () => {
     true,
   ][step];
 
-  const handleConfirm = () => {
+  const handleConfirm = (paymentMethodInfo?: string) => {
     if (!date || !time) return;
+
+    const chosenPayment = paymentMethodInfo || payMethod;
 
     // Add appointment
     addAppointment({
@@ -73,6 +88,8 @@ export const BookAppointment: React.FC = () => {
       date: date.toISOString().slice(0, 10),
       time,
       patientName: "Aarav Mehta",
+      patientPhone: "+91 98201 88410",
+      patientWhatsApp: "919820188410",
       complaint: intake.complaint,
       status: "Upcoming",
     });
@@ -87,8 +104,9 @@ export const BookAppointment: React.FC = () => {
       });
     });
 
+    setPayMethod(chosenPayment);
     setIsBooked(true);
-    showToast("Booking confirmed with Dr. Chetali!");
+    showToast("Booking & payment verified with Dr. Chetali!");
   };
 
   const handlePrintReceipt = () => {
@@ -377,7 +395,7 @@ export const BookAppointment: React.FC = () => {
         </div>
       )}
 
-      {/* Step 5: Checkout & Invoicing */}
+      {/* Step 5: Checkout & Zero-Cost UPI Payment */}
       {step === 4 && (
         <div className="space-y-4 pt-2 text-xs">
           <div className="rounded-2xl border border-[#E8E4DC] bg-white p-4 shadow-sm space-y-2">
@@ -387,50 +405,38 @@ export const BookAppointment: React.FC = () => {
               <span className="text-[#1B3B2B] font-semibold">₹{feeAmount}</span>
             </div>
             <div className="flex justify-between text-[#5A685F]">
-              <span>Platform & Telehealth Technology Fee</span>
-              <span className="text-[#1B3B2B] font-semibold">₹{platformFee}</span>
-            </div>
-            <div className="flex justify-between text-[#5A685F]">
-              <span>GST (18%)</span>
-              <span className="text-[#1B3B2B] font-semibold">₹{gst}</span>
+              <span>Platform Surcharge (Zero Cost Policy)</span>
+              <span className="text-[#2D5A43] font-semibold">₹0 (Free)</span>
             </div>
             <div className="flex justify-between border-t border-[#EFECE6] pt-2 text-sm font-bold text-[#1B3B2B]">
-              <span>Total Payable</span>
+              <span>Direct Doctor Fee</span>
               <span className="font-serif text-2xl font-bold">₹{totalAmount}</span>
             </div>
           </div>
 
-          <div>
-            <p className="text-xs font-semibold text-[#5A685F] mb-2">Select Payment Method</p>
-            <div className="grid grid-cols-2 gap-2">
-              {["UPI (GPay / PhonePe)", "Credit / Debit Card", "NetBanking", "International Card"].map((method) => (
-                <button
-                  key={method}
-                  onClick={() => setPayMethod(method)}
-                  className={`rounded-xl border p-3 text-center transition ${
-                    payMethod === method
-                      ? "border-[#2D5A43] bg-white ring-2 ring-[#2D5A43]/20 font-bold text-[#1B3B2B]"
-                      : "border-[#E8E4DC] bg-white text-[#5A685F] hover:border-[#2D5A43]"
-                  }`}
-                >
-                  {method}
-                </button>
-              ))}
-            </div>
-          </div>
+          <UpiPaymentFlow
+            amount={totalAmount}
+            patientName="Aarav Mehta"
+            kind={kind}
+            onPaymentSuccess={(utr, method) => {
+              handleConfirm(`${method} (Ref: ${utr})`);
+            }}
+          />
         </div>
       )}
 
-      {/* Navigation Buttons */}
-      <div className="pt-2">
-        <button
-          disabled={!canProceed}
-          onClick={() => (step === 4 ? handleConfirm() : setStep(step + 1))}
-          className="w-full rounded-full bg-[#1B3B2B] py-3.5 text-xs font-bold text-white shadow-md disabled:opacity-40 hover:bg-[#264F3B] transition"
-        >
-          {step === 4 ? `Pay ₹${totalAmount} & Confirm Booking` : "Continue"}
-        </button>
-      </div>
+      {/* Navigation Buttons for steps 0 through 3 */}
+      {step < 4 && (
+        <div className="pt-2">
+          <button
+            disabled={!canProceed}
+            onClick={() => setStep(step + 1)}
+            className="w-full rounded-full bg-[#1B3B2B] py-3.5 text-xs font-bold text-white shadow-md disabled:opacity-40 hover:bg-[#264F3B] transition"
+          >
+            Continue
+          </button>
+        </div>
+      )}
     </div>
   );
 };

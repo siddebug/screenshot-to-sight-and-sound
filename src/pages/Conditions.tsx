@@ -71,7 +71,7 @@ export const Conditions: React.FC = () => {
 
                   {/* Book Button */}
                   <Link
-                    to="/book"
+                    to={`/book?specialty=${encodeURIComponent(c.id)}`}
                     className="flex items-center justify-center gap-2 w-full rounded-full bg-[#1B3B2B] py-3 text-xs font-bold text-white shadow-sm hover:bg-[#264F3B] transition"
                   >
                     <span>Book Consultation for {c.name}</span>

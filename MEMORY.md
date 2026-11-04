@@ -35,6 +35,8 @@
 | [`src/components/AppShell.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/components/AppShell.tsx) | Dual-mode navigation: Patient bottom bar (5 tabs) vs Doctor Console (4 clinical tabs) + header |
 | [`src/components/DoctorConsole.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/components/DoctorConsole.tsx) | Doctor Practice workspace (Queue, EMR & Lab Viewer, Rx Pad & Dispatch, Fee Settings) |
 | [`src/components/Toast.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/components/Toast.tsx) | Non-intrusive floating feedback pill |
+| [`src/components/UpiPaymentFlow.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/components/UpiPaymentFlow.tsx) | Zero-fee Bharat UPI QR & 1-tap mobile intent (`upi://pay`) with 12-digit UTR verification |
+| [`src/services/db.ts`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/services/db.ts) | Unified Database and Storage service layer compatible with PocketBase REST API and local fallback |
 | [`src/pages/Home.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/pages/Home.tsx) | Countdown timer, doctor credentials, quick actions, daily video reels modal |
 | [`src/pages/Conditions.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/pages/Conditions.tsx) | 6 specialties with transparent "Where Homeopathy Helps" vs "When to See Allopathy / ER" |
 | [`src/pages/BookAppointment.tsx`](file:///C:/Users/SIDDHARTH%20GAJJAR/.gemini/antigravity/scratch/Medicate/src/pages/BookAppointment.tsx) | 5-step booking wizard with calendar slot selection, lab report uploader, dynamic fee calculation, printable receipt |
@@ -96,6 +98,6 @@
 
 ## Latest Deployment & Git Status
 - **Repositories Synchronized:**
-  - **Medicate Standalone:** [`https://github.com/siddebug/Medicate`](https://github.com/siddebug/Medicate) — Commit `8141406c` (`main` branch)
-  - **Lovable Connected:** [`https://github.com/siddebug/screenshot-to-sight-and-sound`](https://github.com/siddebug/screenshot-to-sight-and-sound) — Commit `cecd0562` (`main` branch)
-- **Status:** All 51 files synchronized cleanly across both repositories with atomic Git Tree API. All credentials and 11 clinical specialties updated.
+  - **Medicate Standalone:** [`https://github.com/siddebug/Medicate`](https://github.com/siddebug/Medicate) — Commit `87f93323` (`main` branch)
+  - **Lovable Connected:** [`https://github.com/siddebug/screenshot-to-sight-and-sound`](https://github.com/siddebug/screenshot-to-sight-and-sound) — Commit `2769c61b` (`main` branch)
+- **Status:** All 51 files synchronized cleanly across both repositories with atomic Git Tree API. Features WhatsApp video consultation with doctor-only call initiation and patient text-only check-in.
