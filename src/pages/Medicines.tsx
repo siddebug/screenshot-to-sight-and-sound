@@ -5,6 +5,7 @@ import {
   ShieldCheck,
   Sun,
   CalendarClock,
+  Download,
 } from "lucide-react";
 import { useApp } from "../context/AppContext";
 import { COURIERS, ORDER_STAGES } from "../data/mockData";
@@ -163,9 +164,20 @@ export const Medicines: React.FC = () => {
             </ul>
           </div>
 
-          <div className="border-t border-[#EFECE6] pt-3 text-right">
-            <p className="font-serif text-lg italic font-bold text-[#1B3B2B]">Dr. Chetali Damania</p>
-            <p className="text-[10px] text-[#5A685F]">CCAH, Medalist in BHMS · Registration No. GHC-2451</p>
+          <div className="flex items-center justify-between border-t border-[#EFECE6] pt-3">
+            <button
+              onClick={() => {
+                showToast("Opening Printable Prescription...");
+                window.print();
+              }}
+              className="flex items-center gap-1.5 rounded-full border border-[#E8E4DC] px-3.5 py-1.5 text-xs font-semibold text-[#1B3B2B] hover:bg-[#FBF9F5] transition"
+            >
+              <Download className="h-3.5 w-3.5 text-[#2D5A43]" /> Print / Save Rx
+            </button>
+            <div className="text-right">
+              <p className="font-serif text-lg italic font-bold text-[#1B3B2B]">Dr. Chetali Damania</p>
+              <p className="text-[10px] text-[#5A685F]">CCAH, Medalist in BHMS · Registration No. GHC-2451</p>
+            </div>
           </div>
         </div>
       </div>

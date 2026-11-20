@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   Bell,
@@ -13,8 +13,10 @@ import {
   Users,
   Send,
   Sliders,
+  LogOut,
 } from "lucide-react";
 import { useApp, DoctorTab } from "../context/AppContext";
+import { DoctorPinModal } from "./DoctorPinModal";
 
 const PATIENT_NAV = [
   { to: "/", label: "Home", icon: Home },
@@ -34,8 +36,25 @@ const DOCTOR_NAV: { tab: DoctorTab; label: string; icon: typeof Clock }[] = [
 export const AppShell: React.FC<{ children: ReactNode }> = ({ children }) => {
   const { role, setRole, doctorTab, setDoctorTab, showToast } = useApp();
   const location = useLocation();
+  const [showPinModal, setShowPinModal] = useState(false);
+
   const isDoctor = role === "doctor";
   const hideChrome = location.pathname.startsWith("/consult");
+
+  const handleSwitchToDoctor = () => {
+    const isAuthed = sessionStorage.getItem("doctor_authenticated") === "true";
+    if (isAuthed) {
+      setRole("doctor");
+    } else {
+      setShowPinModal(true);
+    }
+  };
+
+  const handleLockConsole = () => {
+    sessionStorage.removeItem("doctor_authenticated");
+    setRole("patient");
+    showToast("Doctor Console locked. Switched to Patient View");
+  };
 
   if (hideChrome) {
     return <>{children}</>;
@@ -43,6 +62,15 @@ export const AppShell: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   return (
     <div className={`mx-auto min-h-screen max-w-md pb-24 transition-colors ${isDoctor ? "bg-[#F7F9F8]" : "bg-[#FBF9F5]"}`}>
+      <DoctorPinModal
+        isOpen={showPinModal}
+        onSuccess={() => {
+          setShowPinModal(false);
+          setRole("doctor");
+        }}
+        onCancel={() => setShowPinModal(false)}
+      />
+
       {/* Top Header */}
       <header
         className={`sticky top-0 z-30 border-b px-4 pb-3 pt-3 backdrop-blur transition-colors ${
@@ -75,20 +103,32 @@ export const AppShell: React.FC<{ children: ReactNode }> = ({ children }) => {
             </div>
           </Link>
 
-          <button
-            aria-label="Notifications"
-            onClick={() =>
-              showToast(isDoctor ? "2 patients in waiting room for video consult 🔔" : "Your Blue Dart parcel is in transit 📦")
-            }
-            className={`relative grid h-10 w-10 place-items-center rounded-full border transition-colors ${
-              isDoctor
-                ? "border-emerald-800 bg-emerald-900/60 text-emerald-200"
-                : "border-[#E8E4DC] bg-white text-[#1B3B2B]"
-            }`}
-          >
-            <Bell className="h-4 w-4" />
-            <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-[#D97757]" />
-          </button>
+          <div className="flex items-center gap-1.5">
+            {isDoctor && (
+              <button
+                title="Lock Clinical Console"
+                onClick={handleLockConsole}
+                className="grid h-10 w-10 place-items-center rounded-full border border-emerald-800 bg-emerald-900/60 text-emerald-200 hover:text-white transition"
+              >
+                <LogOut className="h-4 w-4" />
+              </button>
+            )}
+
+            <button
+              aria-label="Notifications"
+              onClick={() =>
+                showToast(isDoctor ? "2 patients in waiting room for video consult 🔔" : "Your Blue Dart parcel is in transit 📦")
+              }
+              className={`relative grid h-10 w-10 place-items-center rounded-full border transition-colors ${
+                isDoctor
+                  ? "border-emerald-800 bg-emerald-900/60 text-emerald-200"
+                  : "border-[#E8E4DC] bg-white text-[#1B3B2B]"
+              }`}
+            >
+              <Bell className="h-4 w-4" />
+              <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-[#D97757]" />
+            </button>
+          </div>
         </div>
 
         {/* Global Role Switcher */}
@@ -106,7 +146,7 @@ export const AppShell: React.FC<{ children: ReactNode }> = ({ children }) => {
             Patient View
           </button>
           <button
-            onClick={() => setRole("doctor")}
+            onClick={handleSwitchToDoctor}
             className={`rounded-full py-1.5 transition ${
               isDoctor ? "bg-emerald-700 text-white shadow-sm font-semibold" : "text-[#5A685F] hover:text-[#1B3B2B]"
             }`}
